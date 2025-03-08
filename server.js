@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 import OpenAI from "openai";
 import { knowledgeBase } from "./src/data/knowledge_base.js";
+import path from "path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -15,6 +16,9 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Serve static files from the dist directory
+app.use(express.static(path.join(__dirname, "dist")));
 
 // Initialize OpenAI with API key
 const openai = new OpenAI({
@@ -119,6 +123,11 @@ Instructions:
       message: "An error occurred while processing your request.",
     });
   }
+});
+
+// Catch-all route to serve index.html
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 const port = process.env.PORT || 3000;
