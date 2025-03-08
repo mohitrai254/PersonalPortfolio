@@ -14,7 +14,7 @@ export default defineConfig({
       "/api": {
         target:
           process.env.NODE_ENV === "production"
-            ? "https://your-render-app-url.onrender.com" // You'll replace this with your actual Render URL
+            ? "https://mohitrai.onrender.com" // You'll replace this with your actual Render URL
             : "http://localhost:3001",
         changeOrigin: true,
         secure: false,
