@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Pizza Order",
+    "imageSrc": "projects/pizza.png",
+    "description": "Order a pizza",
+    "skills": ["React", "HTML", "CSS", "Tailwind CSS", "Redux", "React-router"],
+    "demo": "https://pizzaforyou.netlify.app/",
+    "source": "https://github.com/mohitrai254/React/tree/main/pizza"
+  },
+  {
+    "title": "Travel",
+    "imageSrc": "projects/travel.png",
+    "description": "Create checklist for travel",
+    "skills": ["React", "HTML", "CSS", "Redux", "React-router"],
+    "demo": "https://packandtravel.netlify.app/",
+    "source": "https://github.com/mohitrai254/React/tree/main/travel"
+  },
+  {
+    "title": "Rock Paper Scissor",
+    "imageSrc": "projects/rps.jpg",
+    "description": "Rock Paper Scissor",
+    "skills": ["HTML", "CSS", "JavaScript"],
+    "demo": "https://rockpaperscissormohit.netlify.app",
+    "source": "https://github.com/mohitrai254/JavaScript/tree/main/Rock%20Paper%20Scissor"
+  },
+  {
+    "title": "Tic Tac Toe",
+    "imageSrc": "projects/tictactoe.png",
+    "description": "Rock Paper Scissor",
+    "skills": ["HTML", "CSS", "JavaScript"],
+    "demo": "https://tictactoemohitrai.netlify.app",
+    "source": "https://github.com/mohitrai254/JavaScript/tree/main/Tic%20Tac%20Toe"
+  }
+]

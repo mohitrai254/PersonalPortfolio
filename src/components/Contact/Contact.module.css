@@ -1,0 +1,255 @@
+@import "../../vars.css";
+
+.container {
+  color: var(--color-text);
+  margin-top: 120px;
+  background-color: var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  padding: 58px 10%;
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-text),
+    transparent
+  );
+}
+
+.text {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.text h2 {
+  font-size: 80px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, var(--color-text), #888);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text p {
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+.contentWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 1;
+}
+
+.form {
+  flex: 1;
+  max-width: 500px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text);
+  font-size: 18px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: var(--color-text);
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.successMessage {
+  color: #4caf50;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 18px;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.errorMessage {
+  color: #f44336;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 18px;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(244, 67, 54, 0.1);
+}
+
+.links {
+  flex: 1;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  gap: 26px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.link img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.link:hover img {
+  transform: scale(1.1);
+}
+
+.link a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.link a:hover {
+  color: var(--color-primary);
+}
+
+@media screen and (max-width: 930px) {
+  .contentWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .links {
+    align-items: center;
+    padding-top: 0;
+    width: 100%;
+  }
+
+  .text h2 {
+    font-size: 60px;
+  }
+
+  .text p {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .text h2 {
+    font-size: 40px;
+  }
+
+  .text p {
+    font-size: 24px;
+  }
+
+  .link a {
+    font-size: 20px;
+  }
+
+  .form,
+  .links {
+    padding: 1rem;
+  }
+}

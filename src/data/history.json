@@ -1,0 +1,15 @@
+[
+  {
+    "role": "Associate Professional Software Engineer",
+    "organisation": "DXC Technology",
+    "startDate": "Feb, 2022",
+    "endDate": "Present",
+    "experiences": [
+      "Proficiently utilized React to design and maintain interactive and responsive user interfaces.",
+      "Experienced in using modern React libraries such as Redux and React Router to manage application state and routing respectively.",
+      "Proficiently utilized TestMagic and Selenium automation tools, ensuring meticulous automation of applications.",
+      "Developed integrated test cases, establishing interaction between Web, SAP, AS400 and Prodmast applications."
+    ],
+    "imageSrc": "history/dxc.png"
+  }
+]
