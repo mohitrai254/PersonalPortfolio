@@ -108,7 +108,7 @@ export const Hero = () => {
         </p>
         <div className={styles.cta}>
           <a
-            href="https://drive.google.com/file/d/1w4avlazEzyLd9rwhlW1V6tCtBhTaJbGn/view?pli=1"
+            href="https://drive.google.com/file/d/1wUpoAxF4NvHcxqskudONDq1naQIon9iF/view"
             className={styles.contactBtn}
           >
             Resume
