@@ -118,7 +118,7 @@ const Contact = () => {
                 src={getImageUrl("contact/linkedinIcon.png")}
                 alt="LinkedIn icon"
               />
-              <a href="https://www.linkedin.com/mohitrai254">
+              <a href="https://www.linkedin.com/in/mohitrai254">
                 linkedin.com/mohitrai254
               </a>
             </li>
