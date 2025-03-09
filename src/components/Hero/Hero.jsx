@@ -119,7 +119,7 @@ export const Hero = () => {
               <span className={styles.statLabel}>Years Experience</span>
             </div>
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>20+</span>
+              <span className={styles.statNumber}>10+</span>
               <span className={styles.statLabel}>Projects Completed</span>
             </div>
           </div>

@@ -1,121 +1,70 @@
 /* eslint-disable react/no-unescaped-entities */
 import styles from "./About.module.css";
 import { getImageUrl } from "../../utils";
-import { memo, useState } from "react";
+import { memo, useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
 
 const serviceDetails = {
   "Front-end Developer": {
-    images: [
-      "about/frontend-1.jpg",
-      "about/frontend-2.jpg",
-      "about/frontend-3.jpg",
-    ],
     description: `Creating exceptional digital experiences through modern web development.
 
-I transform ideas into interactive realities using cutting-edge technologies and best practices in frontend development. My approach combines aesthetic design with technical excellence.
-
 Key Focus Areas:
-Modern Framework Mastery
-Leveraging React and Next.js to build dynamic, responsive applications that provide seamless user experiences across all devices.
+• Modern Framework Mastery: React, Next.js, Redux
+• Performance Optimization: Fast load times, smooth interactions
+• UI/UX Excellence: Responsive design, modern animations
+• Technical Innovation: PWAs, SSR, modern state management
 
-Performance Optimization
-Implementing advanced optimization techniques to ensure lightning-fast load times and smooth interactions, resulting in improved user engagement and conversion rates.
-
-UI/UX Excellence
-Creating intuitive interfaces with modern design patterns and smooth animations that delight users while maintaining accessibility standards.
-
-Technical Innovation
-Staying at the forefront of web technologies, implementing features like:
-- Progressive Web Apps for offline capabilities
-- Server-Side Rendering for optimal performance
-- Modern state management for complex applications
-- Responsive layouts using modern CSS techniques
-
-Recent Projects Highlight:
-✦ E-commerce platform with real-time inventory
-✦ Interactive dashboard with data visualization
-✦ Progressive Web App with offline functionality`,
+Recent Projects:
+• E-commerce platform with real-time inventory
+• Interactive dashboard with data visualization
+• Progressive Web App with offline functionality`,
   },
   "AWS Certified Cloud Practitioner": {
-    images: ["about/aws-1.jpg", "about/aws-2.jpg", "about/aws-3.jpg"],
     description: `Architecting scalable cloud solutions with AWS expertise.
 
-My AWS certification reflects my commitment to cloud excellence and ability to design robust, scalable solutions for modern applications.
-
-Cloud Architecture Excellence:
-I specialize in designing and implementing cloud-native solutions that leverage AWS's powerful service ecosystem.
-
-Infrastructure Innovation:
-Creating flexible and resilient infrastructure using:
-- Serverless computing with AWS Lambda
-- Containerization with ECS and EKS
-- High-availability architectures
-- Auto-scaling solutions
-
-Security & Compliance:
-Implementing industry best practices for:
-- Data protection and encryption
-- Access management and security
-- Compliance frameworks
-- Network security
-
-Cost Optimization:
-Strategic resource planning and implementation of:
-- Pay-as-you-go models
-- Resource scaling strategies
-- Cost monitoring and optimization
-- Budget management tools
+Key Skills:
+• Cloud Architecture: Designing robust, scalable solutions
+• Infrastructure: Serverless, containers, high-availability
+• Security & Compliance: Data protection, access management
+• Cost Optimization: Resource planning and monitoring
 
 Recent Implementations:
-✦ Serverless microservices architecture
-✦ Multi-region disaster recovery solution
-✦ Automated CI/CD pipelines with AWS`,
+• Serverless microservices architecture
+• Multi-region disaster recovery
+• Automated CI/CD pipelines`,
   },
   "Automation Tester": {
-    images: [
-      "about/testing-1.jpg",
-      "about/testing-2.jpg",
-      "about/testing-3.jpg",
-    ],
-    description: `Ensuring software excellence through comprehensive testing strategies.
+    description: `Ensuring software excellence through comprehensive testing.
 
-As an ISTQB certified tester, I bring a systematic approach to quality assurance, combining technical expertise with strategic testing methodologies.
+Key Expertise:
+• Test Automation: Selenium, Cypress, API testing
+• Framework Design: BDD, TDD, CI/CD integration
+• Performance Testing: Load testing, security testing
+• Quality Assurance: Cross-browser compatibility
 
-Testing Excellence:
-Implementing comprehensive testing strategies that ensure robust and reliable software delivery.
-
-Automation Framework Design:
-Creating scalable and maintainable test automation frameworks using:
-- Selenium WebDriver for web applications
-- Cypress for modern web testing
-- API testing with Postman and REST Assured
-- Performance testing with JMeter
-
-Quality Assurance Innovation:
-Advanced testing methodologies including:
-- Behavior Driven Development (BDD)
-- Test Driven Development (TDD)
-- Continuous Testing in CI/CD
-- Mobile application testing
-
-Performance Optimization:
-Specialized in:
-- Load testing and performance analysis
-- Scalability testing
-- Security testing
-- Cross-browser compatibility
-
-Recent Achievements:
-✦ 80% reduction in regression testing time
-✦ Implementation of AI-powered test automation
-✦ Zero critical bugs in production releases`,
+Achievements:
+• 80% reduction in regression testing time
+• AI-powered test automation implementation
+• Zero critical bugs in production releases`,
   },
 };
 
 const About = memo(function About() {
   const [selectedService, setSelectedService] = useState(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  useEffect(() => {
+    const navbar = document.querySelector("nav");
+    if (selectedService) {
+      navbar.style.display = "none";
+    } else {
+      navbar.style.display = "flex";
+    }
+
+    return () => {
+      navbar.style.display = "flex";
+    };
+  }, [selectedService]);
 
   const handleNextImage = () => {
     if (selectedService) {
@@ -133,6 +82,10 @@ const About = memo(function About() {
           : prev - 1
       );
     }
+  };
+
+  const handleCloseModal = () => {
+    setSelectedService(null);
   };
 
   return (
@@ -206,55 +159,17 @@ const About = memo(function About() {
       </div>
 
       {selectedService && (
-        <div className={styles.modal} onClick={() => setSelectedService(null)}>
+        <div className={styles.modal} onClick={handleCloseModal}>
           <div
             className={styles.modalContent}
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              className={styles.closeBtn}
-              onClick={() => setSelectedService(null)}
-            >
+            <button className={styles.closeBtn} onClick={handleCloseModal}>
               <FaTimes />
             </button>
-            <div className={styles.modalBody}>
-              <div className={styles.modalImageSlider}>
-                <button
-                  className={`${styles.sliderBtn} ${styles.prevBtn}`}
-                  onClick={handlePrevImage}
-                >
-                  ‹
-                </button>
-                <div className={styles.modalImage}>
-                  <img
-                    src={getImageUrl(
-                      serviceDetails[selectedService].images[activeImageIndex]
-                    )}
-                    alt={`${selectedService} ${activeImageIndex + 1}`}
-                  />
-                  <div className={styles.imageDots}>
-                    {serviceDetails[selectedService].images.map((_, index) => (
-                      <span
-                        key={index}
-                        className={`${styles.dot} ${
-                          index === activeImageIndex ? styles.activeDot : ""
-                        }`}
-                        onClick={() => setActiveImageIndex(index)}
-                      />
-                    ))}
-                  </div>
-                </div>
-                <button
-                  className={`${styles.sliderBtn} ${styles.nextBtn}`}
-                  onClick={handleNextImage}
-                >
-                  ›
-                </button>
-              </div>
-              <div className={styles.modalText}>
-                <h3>{selectedService}</h3>
-                <p>{serviceDetails[selectedService].description}</p>
-              </div>
+            <div className={styles.modalText}>
+              <h3>{selectedService}</h3>
+              <p>{serviceDetails[selectedService].description}</p>
             </div>
           </div>
         </div>

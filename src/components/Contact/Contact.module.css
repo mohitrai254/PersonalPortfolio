@@ -2,19 +2,19 @@
 
 .container {
   color: var(--color-text);
-  margin-top: 120px;
+  margin-top: 129px;
   background-color: var(--color-secondary);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100vw;
-  padding: 58px 10%;
-  gap: 40px;
+  padding: 40px 10%;
+  gap: 20px;
   position: relative;
   overflow: hidden;
 }
 
-.container::before {
+/* .container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -27,35 +27,37 @@
     var(--color-text),
     transparent
   );
-}
+} */
 
 .text {
-  text-align: center;
+  text-align: left;
+  width: 100%;
+  max-width: 1200px;
   position: relative;
   z-index: 1;
+  margin-bottom: 10px;
 }
 
 .text h2 {
-  font-size: 80px;
+  color: var(--color-text);
+  font-size: 35px;
   font-weight: 700;
-  letter-spacing: 4px;
-  margin-bottom: 20px;
-  background: linear-gradient(45deg, var(--color-text), #888);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
 .text p {
-  font-size: 40px;
+  font-size: 20px;
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   opacity: 0.9;
+  margin-bottom: 20px;
 }
 
 .contentWrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 60px;
   width: 100%;
@@ -65,9 +67,9 @@
 }
 
 .form {
-  flex: 1;
-  max-width: 500px;
-  padding: 2rem;
+  width: 550px;
+  min-height: 480px;
+  padding: 1.5rem;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 16px;
   backdrop-filter: blur(10px);
@@ -76,7 +78,7 @@
 }
 
 .formGroup {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .input,
@@ -106,7 +108,7 @@
 }
 
 .textarea {
-  min-height: 150px;
+  min-height: 120px;
   resize: vertical;
 }
 
@@ -136,7 +138,8 @@
   cursor: not-allowed;
 }
 
-.successMessage {
+.successMessage,
+.errorMessage {
   color: #4caf50;
   text-align: center;
   margin-top: 1rem;
@@ -144,27 +147,25 @@
   padding: 1rem;
   border-radius: 8px;
   background: rgba(76, 175, 80, 0.1);
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .errorMessage {
   color: #f44336;
-  text-align: center;
-  margin-top: 1rem;
-  font-size: 18px;
-  padding: 1rem;
-  border-radius: 8px;
   background: rgba(244, 67, 54, 0.1);
 }
 
 .links {
-  flex: 1;
-  max-width: 480px;
+  width: 480px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   list-style: none;
-  gap: 26px;
-  padding: 2rem;
+  gap: 20px;
+  padding: 1.5rem;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 16px;
   backdrop-filter: blur(10px);
@@ -216,32 +217,28 @@
     gap: 40px;
   }
 
-  .form {
-    width: 100%;
-  }
-
+  .form,
   .links {
-    align-items: center;
-    padding-top: 0;
     width: 100%;
+    max-width: 600px;
   }
 
   .text h2 {
-    font-size: 60px;
+    font-size: 35px;
   }
 
   .text p {
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .text h2 {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .text p {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .link a {

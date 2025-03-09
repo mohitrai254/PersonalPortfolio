@@ -19,7 +19,14 @@ export const Navbar = () => {
     e.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const offset = 90; // This accounts for the navbar height and some padding
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
     setMenuOpen(false);
   };

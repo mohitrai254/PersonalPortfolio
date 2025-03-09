@@ -16,16 +16,11 @@ const Contact = () => {
     setSubmitStatus(null);
 
     try {
-      // Send the main email to you with form data
-      await emailjs.send(
+      // Send the form data to your email
+      await emailjs.sendForm(
         "service_3cbnma4",
         "template_4d00l29",
-        {
-          user_name: form.current.user_name.value,
-          user_email: form.current.user_email.value,
-          user_phone: form.current.user_phone.value,
-          message: form.current.message.value,
-        },
+        form.current,
         "5y6SgvIU5PYGwjg_n"
       );
 
@@ -40,14 +35,11 @@ const Contact = () => {
   };
 
   return (
-    <footer id="contact" className={styles.container}>
-      <ScrollReveal>
-        <div className={`${styles.text} animate-fadeIn`}>
-          <h2>Contact</h2>
-          <p>Feel free to reach out!</p>
-        </div>
-      </ScrollReveal>
-
+    <footer className={styles.container} id="contact">
+      <div className={styles.text}>
+        <h2>Contact</h2>
+        <p>Feel free to reach out - let's create something amazing together!</p>
+      </div>
       <div className={styles.contentWrapper}>
         <ScrollReveal>
           <form

@@ -5,12 +5,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 120px;
+  margin-top: 100px;
   z-index: 1;
   margin-left: 10%;
   margin-right: 10%;
   overflow: hidden;
   min-height: 80vh;
+  border-radius: 40px;
 }
 
 .techIcons {
@@ -89,6 +90,8 @@
   color: var(--color-text);
   z-index: 1;
   max-width: 600px;
+  margin-right: 40px;
+  padding: 30px;
 }
 
 .title {
@@ -180,15 +183,17 @@
 
 .heroImg {
   position: relative;
-  width: 50%;
+  width: 45%;
   z-index: 1;
+  margin-left: 20px;
 }
 
 .heroImg img {
-  width: 100%;
+  width: 90%;
   border-radius: 20%;
   animation: float 3s ease-in-out infinite;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  margin-right: 20px;
 }
 
 .glowingEffect {
