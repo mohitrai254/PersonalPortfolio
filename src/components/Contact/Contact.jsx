@@ -119,7 +119,7 @@ const Contact = () => {
                 alt="LinkedIn icon"
               />
               <a href="https://www.linkedin.com/in/mohitrai254">
-                linkedin.com/mohitrai254
+                linkedin.com/in/mohitrai254
               </a>
             </li>
             <li className={`${styles.link} hover-lift`}>
