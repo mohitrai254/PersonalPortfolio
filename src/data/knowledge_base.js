@@ -125,4 +125,107 @@ export const knowledgeBase = {
       answer: "I am a quick learner and I am always eager to learn new things.",
     },
   ],
+
+  current_role: {
+    company: "DXC Technology",
+    position: "Associate Professional Software Engineer",
+    duration: "Feb 2022 - Present",
+    location: "Noida, India",
+    key_skills: [
+      "React",
+      "Redux",
+      "React Router",
+      "Performance Optimization",
+      "npm",
+      "Node.js",
+    ],
+    achievements: [
+      "React lifecycle optimization",
+      "Responsive UI development",
+      "State management with Redux",
+      "Performance optimization using hooks (useEffect, useMemo)",
+      "Lazy loading implementation",
+    ],
+  },
+
+  freelance: {
+    position: "Front-end Developer",
+    tech_stack: [
+      "ReactJS",
+      "Redux",
+      "React-router",
+      "Context API",
+      "Node.js",
+      "NextJS",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Cursor IDE",
+      "ChatGPT",
+    ],
+    key_achievements: [
+      "20% increase in page views through mobile-first optimization",
+      "25% reduction in development time using AI tools",
+      "AI chatbot implementation",
+      "API integration using Axios and Fetch",
+      "User authentication implementation",
+    ],
+  },
+
+  pizza_ordering_app: {
+    tech_stack: [
+      "ReactJS",
+      "HTML/CSS",
+      "Tailwind CSS",
+      "React-router",
+      "Redux",
+    ],
+    features: [
+      "Single page functionality",
+      "Remote state management",
+      "Dynamic menu loading via API",
+      "Multiple pizza ordering system",
+    ],
+  },
+
+  portfolio: {
+    tech_stack: [
+      "ReactJs",
+      "HTML/CSS",
+      "React-router",
+      "OpenAI",
+      "Cursor",
+      "EmailJS",
+    ],
+    features: [
+      "AI chatbot integration",
+      "Responsive design",
+      "Email functionality",
+      "Auto-reply system",
+    ],
+  },
+
+  languages: ["JavaScript", "HTML", "CSS", "C++", "C"],
+  frameworks_libraries: [
+    "ReactJS",
+    "Redux",
+    "Bootstrap",
+    "Tailwind CSS",
+    "NodeJS",
+    "EmailJS",
+    "Axios",
+    "NextJS",
+  ],
+  version_control: ["Git", "Azure"],
+
+  education: {
+    university: "Amity University, Lucknow",
+    degree: "B.Tech Biotechnology",
+    cgpa: "8.95/10",
+    graduation: "July 2022",
+  },
+
+  awards: ["DXC Emerald Award", "DXC Champ Award", "DXC Collaborators Award"],
+
+  award_reasons:
+    "Exceptional teamwork, collaboration, and consistently surpassing quarterly targets",
 };
